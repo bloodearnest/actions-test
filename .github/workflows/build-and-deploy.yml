@@ -18,3 +18,5 @@ jobs:
             echo "github.ref_type: ${{ github.ref_type }}"
             echo "github.event: ${{ github.event }}"
             echo "${{ github }}"
+      - name: debug
+        uses: hmarr/debug-action@v2
