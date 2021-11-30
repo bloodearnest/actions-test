@@ -1,0 +1,20 @@
+name: Triggered
+
+on:
+  create:
+  workflow_dispatch:
+  push:
+      tags: ['v*']
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    env:
+      image: ghcr.io/opensafely-core/cohortextractor-v2
+    steps:
+      - name: Show
+        run: |
+            echo "github.ref: ${{ github.ref }}"
+            echo "github.ref_type: ${{ github.ref_type }}"
+            echo "github.event: ${{ github.event }}"
+            echo "${{ github }}"
